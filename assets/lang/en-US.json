@@ -1,3 +1,37 @@
 {
-    "home": "Home"
+    "": "",
+    "welcome": {
+        "title": "Welcome to diamond hotel",
+        "caption": "We are providing a great services since 2009. To start up you can create account or login here.",
+        "login": "Login",
+        "create": "Create new account"
+    },
+    "createAccount": {
+        "title": "Sign up",
+        "username": "Username",
+        "password": "Password",
+        "firstName": "Firstname",
+        "lastName": "Lastname",
+        "gender": "Gender",
+        "dob": "Date of birth",
+        "phoneNumber": "Phone number"
+    },
+    "login": {
+        "title": "Log In",
+        "username": "Username",
+        "password": "Password"
+    },
+    "home": {
+        "welcome": "Welcome",
+        "question": "What's can we help you today ?",
+        "services": "Services",
+        "bookingRoom": "Booking Room",
+        "orderFood": "Order Food",
+        "myBooking": "My Booking",
+        "button": "Booking now"
+    },
+    "myProfile": {
+        "title": "My Profile",
+        "update": "Update"
+    }
 }

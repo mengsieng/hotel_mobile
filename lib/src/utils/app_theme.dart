@@ -6,13 +6,16 @@ ThemeData themeData = ThemeData(
   cursorColor: Colors.white,
   appBarTheme: AppBarTheme(
     iconTheme: IconThemeData(
-      color: Colors.white,
+      color: Colors.black,
     ),
+    elevation: 0.0,
+    color: Colors.transparent,
     textTheme: TextTheme(
       // ignore: deprecated_member_use
       title: TextStyle(
-        color: Colors.white,
-        fontSize: 20,
+        color: Colors.black,
+        fontSize: 20.0,
+        fontWeight: FontWeight.bold,
       ),
     ),
   ),

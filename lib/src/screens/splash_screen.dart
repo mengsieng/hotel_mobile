@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:skull/src/utils/route_name.dart';
+
+import '../services/preference_service.dart';
+import '../utils/route_name.dart';
 
 class SplashView extends StatefulWidget {
   @override
@@ -14,10 +18,17 @@ class _SplashViewState extends State<SplashView> {
   }
 
   initRoute() async {
-    Future.delayed(
-      Duration(seconds: 1),
-      () => Navigator.popAndPushNamed(context, Home),
-    );
+    Future.delayed(Duration(seconds: 1), () async {
+      SharePreferenceService preferenceService =
+          Provider.of(context, listen: false);
+      final token = await preferenceService.getToken();
+      if (token == null) {
+        print(token);
+        Navigator.popAndPushNamed(context, Welcome);
+      } else {
+        Navigator.popAndPushNamed(context, Home);
+      }
+    });
   }
 
   @override

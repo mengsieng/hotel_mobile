@@ -1,3 +1,7 @@
 {
-    "home": "ផ្ទៈ"
+    "home": "ផ្ទៈ",
+    "welcome": {
+        "title": "Welcome to diamond hotel",
+        "caption": "We are providing a great services since 2009. To start up you can create account or login here."
+    }
 }

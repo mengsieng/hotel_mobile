@@ -19,6 +19,8 @@ dependencies:
   provider: ^4.3.2+2
   flutter_native_loading:
   fluttertoast: ^7.1.1
+  cached_network_image: ^2.2.0+1
+  shimmer: ^1.1.1
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +32,10 @@ flutter:
     - assets/lang/en-US.json
     - assets/lang/km-KH.json
     - assets/img/building.png
+    - assets/img/gender.png
+    - assets/img/booking.png
+    - assets/img/food.png
+    - assets/img/myBooking.png
   # fonts:
   #   - family: Schyler
   #     fonts:

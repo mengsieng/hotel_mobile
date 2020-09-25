@@ -18,16 +18,18 @@ List<SingleChildWidget> independentServices = [
 ];
 
 List<SingleChildWidget> dependentServices = [
-  ProxyProvider<Dio, HttpServices>(
-    update: (context, dio, _) {
-      return HttpServices(dio);
+  ProxyProvider2<Dio, SharePreferenceService, HttpServices>(
+    update: (context, dio, preference, _) {
+      return HttpServices(dio, preference);
     },
   ),
 ];
 
 List<SingleChildWidget> uiConsumableWidget = [
-  ChangeNotifierProxyProvider<HttpServices, HomeProvider>(
+  ChangeNotifierProxyProvider2<HttpServices, SharePreferenceService,
+      HomeProvider>(
     create: null,
-    update: (context, http, previous) => HomeProvider(http),
+    update: (context, http, preference, previous) =>
+        HomeProvider(http, preference),
   ),
 ];
