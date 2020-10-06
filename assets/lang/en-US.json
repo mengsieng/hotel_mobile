@@ -1,5 +1,6 @@
 {
     "": "",
+    "txtValidate": "This TextField is empty",
     "welcome": {
         "title": "Welcome to diamond hotel",
         "caption": "We are providing a great services since 2009. To start up you can create account or login here.",
@@ -14,12 +15,15 @@
         "lastName": "Lastname",
         "gender": "Gender",
         "dob": "Date of birth",
-        "phoneNumber": "Phone number"
+        "phoneNumber": "Phone number",
+        "error": "Please input with upper latter and number",
+        "question": "Already have account ? "
     },
     "login": {
         "title": "Log In",
         "username": "Username",
-        "password": "Password"
+        "password": "Password",
+        "question": "Didn't have account ? "
     },
     "home": {
         "welcome": "Welcome",
@@ -28,10 +32,47 @@
         "bookingRoom": "Booking Room",
         "orderFood": "Order Food",
         "myBooking": "My Booking",
-        "button": "Booking now"
+        "button": "Booking now",
+        "error": "Sorry! Our room not available :(",
+        "subTitle": "Our Room"
     },
     "myProfile": {
-        "title": "My Profile",
-        "update": "Update"
+        "title": "Menu",
+        "update": "Update",
+        "seeProfile": "See your info",
+        "setting": "Setting",
+        "language": {
+            "title": "Choose your language",
+            "english": "English",
+            "khmer": "Khmer"
+        },
+        "changePassword": {
+            "title": "Change password",
+            "old": "Old password",
+            "new": "New password",
+            "change": "Save change"
+        }
+    },
+    "booking": {
+        "title": "Booking",
+        "checkinDate": "Check-In date",
+        "roomNumber": "Room number",
+        "bookingNow": "Booking now",
+        "logOut": "Log Out",
+        "notFree": "This room not free",
+        "error": "No room available yet :(",
+        "please": "Please select room",
+        "roomTitle": "Room Type"
+    },
+    "myBooking": {
+        "title": "My Booking",
+        "bookingNumber": "Booking Number",
+        "roomType": "Room Type",
+        "roomNumber": "Room Number",
+        "checkInDate": "Check-In Date",
+        "checkOutDate": "Check-Out Date",
+        "total": "Total",
+        "error": "Your Booking is empty",
+        "continue": "Click on robot to booking"
     }
 }

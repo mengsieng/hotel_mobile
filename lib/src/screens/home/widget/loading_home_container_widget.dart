@@ -8,7 +8,10 @@ class LoadingHomeContainer extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(bottom: 10.0),
       padding: EdgeInsets.all(10.0),
-      color: Colors.white,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10.0),
+      ),
       child: Shimmer.fromColors(
         baseColor: Colors.grey[300],
         highlightColor: Colors.grey[100],

@@ -1,12 +1,14 @@
 class UserModel {
   String token;
   Data data;
+  int statusCode;
 
-  UserModel({this.token, this.data});
+  UserModel({this.token, this.data, this.statusCode});
 
   UserModel.fromJson(Map<String, dynamic> json) {
     token = json['token'];
     data = json['data'] != null ? new Data.fromJson(json['data']) : null;
+    statusCode = json['statusCode'];
   }
 
   Map<String, dynamic> toJson() {
@@ -15,6 +17,7 @@ class UserModel {
     if (this.data != null) {
       data['data'] = this.data.toJson();
     }
+    data['statusCode'] = this.statusCode;
     return data;
   }
 }

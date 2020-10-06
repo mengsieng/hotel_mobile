@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
+import 'package:skull/src/provider/auth_provider.dart';
+import 'package:skull/src/provider/booking_provider.dart';
 import 'package:skull/src/provider/home_provider.dart';
 import 'package:skull/src/services/http_services.dart';
 import 'package:skull/src/services/preference_service.dart';
@@ -32,4 +34,16 @@ List<SingleChildWidget> uiConsumableWidget = [
     update: (context, http, preference, previous) =>
         HomeProvider(http, preference),
   ),
+  ChangeNotifierProxyProvider2<HttpServices, SharePreferenceService,
+      AuthProvider>(
+    create: null,
+    update: (context, http, preference, previous) =>
+        AuthProvider(http, preference),
+  ),
+  ChangeNotifierProxyProvider2<HttpServices, SharePreferenceService,
+      BookingProvider>(
+    create: null,
+    update: (context, http, preference, previous) =>
+        BookingProvider(http, preference),
+  )
 ];

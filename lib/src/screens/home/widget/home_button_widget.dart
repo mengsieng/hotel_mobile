@@ -20,15 +20,17 @@ class HomeButton extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: width * 0.28,
-        height: 115.0,
+        height: 110.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10.0),
           color: Color(0XFFF3F3F3),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Spacer(),
             Container(
-              margin: EdgeInsets.all(7.0),
+              margin: EdgeInsets.symmetric(horizontal: 7.0),
               padding: EdgeInsets.all(20.0),
               width: width * 0.28,
               height: 80.0,
@@ -40,10 +42,16 @@ class HomeButton extends StatelessWidget {
                 imagePath,
               ),
             ),
+            context.locale == Locale('km', 'KH') ? Container() : Spacer(),
             Text(
               title,
-              style: Theme.of(context).textTheme.caption,
+              style: context.locale == Locale('km', 'KH')
+                  ? Theme.of(context).textTheme.caption.copyWith(
+                        fontSize: 10.0,
+                      )
+                  : Theme.of(context).textTheme.caption,
             ).tr(),
+            Spacer(),
           ],
         ),
       ),

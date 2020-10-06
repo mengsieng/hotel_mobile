@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:provider/provider.dart';
+import 'package:skull/src/provider/auth_provider.dart';
 import 'package:skull/src/provider/home_provider.dart';
 import 'package:skull/src/utils/route_name.dart';
-import 'package:skull/src/widget/raised_button_widget.dart';
-import 'package:skull/src/widget/text_field_widget.dart';
 
 class ProfileView extends StatefulWidget {
   @override
@@ -24,19 +23,11 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
     final HomeProvider homeProvider = Provider.of(context, listen: true);
+    AuthProvider authProvider = Provider.of(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text('myProfile.title').tr(),
         centerTitle: false,
-        actions: [
-          IconButton(
-            icon: Icon(Icons.exit_to_app),
-            onPressed: () {
-              homeProvider.preferenceService.removeToken();
-              Navigator.popAndPushNamed(context, Welcome);
-            },
-          ),
-        ],
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 10.0),
@@ -44,40 +35,95 @@ class _ProfileViewState extends State<ProfileView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: CircleAvatar(
-                  radius: 50.0,
+              ListTile(
+                onTap: () {},
+                title: Text(
+                  homeProvider.user.firstName +
+                      " " +
+                      homeProvider.user.lastName,
                 ),
+                leading: CircleAvatar(
+                  radius: 25,
+                ),
+                subtitle: Text(
+                  'myProfile.seeProfile',
+                ).tr(),
               ),
-              Text('createAccount.firstName').tr(),
-              RoundTextField(
-                controller: homeProvider.firstName,
-              ),
-              Text('createAccount.lastName').tr(),
-              RoundTextField(
-                controller: homeProvider.lastName,
-              ),
-              Text('createAccount.password').tr(),
-              RoundTextField(
-                controller: homeProvider.password,
-                icon: Icons.remove_red_eye,
-              ),
-              Text('createAccount.gender').tr(),
-              RoundTextField(
-                controller: homeProvider.gender,
-                icon: Icons.wc,
-              ),
-              Text('createAccount.dob').tr(),
-              RoundTextField(
-                controller: homeProvider.dob,
-                icon: Icons.calendar_today,
+              Divider(),
+              Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10.0),
+                ),
+                child: Column(
+                  children: [
+                    ListTile(
+                      onTap: () => Navigator.pushNamed(context, Booking,
+                          arguments: homeProvider.roomModel),
+                      title: Text(
+                        'home.bookingRoom',
+                      ).tr(),
+                      leading: Image.asset(
+                        'assets/img/booking.png',
+                        width: 30.0,
+                      ),
+                    ),
+                    ListTile(
+                      onTap: () {},
+                      title: Text(
+                        'home.orderFood',
+                      ).tr(),
+                      leading: Image.asset(
+                        'assets/img/food.png',
+                        width: 30.0,
+                      ),
+                    ),
+                    ListTile(
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        MyBooking,
+                      ),
+                      title: Text(
+                        'home.myBooking',
+                      ).tr(),
+                      leading: Image.asset(
+                        'assets/img/myBooking.png',
+                        width: 30.0,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 10.0,
               ),
-              LongRaisedButton(
-                onTap: () {},
-                title: 'myProfile.update',
+              ExpansionTile(
+                leading: Icon(Icons.settings),
+                title: Text('myProfile.setting').tr(),
+                children: [
+                  ListTile(
+                    onTap: () => Navigator.pushNamed(context, ProfileLanguage),
+                    title: Text(
+                      'myProfile.language.title',
+                    ).tr(),
+                    leading: Icon(Icons.language),
+                  ),
+                  ListTile(
+                    onTap: () => Navigator.pushNamed(context, ChangePassword),
+                    title: Text(
+                      'myProfile.changePassword.title',
+                    ).tr(),
+                    leading: Icon(Icons.vpn_key),
+                  ),
+                ],
+              ),
+              ListTile(
+                onTap: () => authProvider.logout(context),
+                title: Text(
+                  'booking.logOut',
+                ).tr(),
+                leading: Icon(Icons.exit_to_app),
               ),
             ],
           ),

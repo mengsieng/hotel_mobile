@@ -1,7 +1,78 @@
 {
-    "home": "ផ្ទៈ",
+    "": "",
+    "txtValidate": "This TextField is empty",
     "welcome": {
-        "title": "Welcome to diamond hotel",
-        "caption": "We are providing a great services since 2009. To start up you can create account or login here."
+        "title": "សូមស្វាគមន៍មកកាន់ Diamond សណ្ឋាគារ",
+        "caption": "យើងកំពុងផ្តល់ជូនសេវាកម្មល្អតាំងពីឆ្នាំ ២០០៩។ ដើម្បីចាប់ផ្តើមអ្នកអាចបង្កើតគណនីឬចូលនៅទីនេះ។",
+        "login": "ចូល",
+        "create": "បង្កើត​គណនី​ថ្មី"
+    },
+    "createAccount": {
+        "title": "ចុះ​ឈ្មោះ",
+        "username": "ឈ្មោះ​អ្នកប្រើប្រាស់",
+        "password": "ពាក្យសម្ងាត់",
+        "firstName": "នាមខ្លួន",
+        "lastName": "នាមត្រកូល",
+        "gender": "ភេទ",
+        "dob": "ថ្ងៃខែ​ឆ្នាំ​កំណើត",
+        "phoneNumber": "លេខទូរសព្ទ",
+        "error": "សូមបញ្ចូលព័ត៌មានទាំងអស់",
+        "question": "មានគណនីរួចហើយ ? "
+    },
+    "login": {
+        "title": "ចូល",
+        "username": "ឈ្មោះ​អ្នកប្រើប្រាស់",
+        "password": "ពាក្យសម្ងាត់",
+        "question": "មិនមានគណនី ? "
+    },
+    "home": {
+        "welcome": "សូមស្វាគមន៍",
+        "question": "តើមានអ្វីដែលយើងអាចជួយអ្នកនៅថ្ងៃនេះ?",
+        "services": "សេវាកម្ម",
+        "bookingRoom": "កក់បន្ទប់",
+        "orderFood": "កុម្ម៉ង់ម្ហូប",
+        "myBooking": "ការកក់របស់ខ្ញុំ",
+        "button": "កក់ឥឡូវនេះ",
+        "error": "សុំទោស! បន្ទប់របស់យើងមិនមានទេ :(",
+        "subTitle": "បន្ទប់របស់យើង"
+    },
+    "myProfile": {
+        "title": "មឺនុយ",
+        "update": "កែប្រែ",
+        "seeProfile": "មើលព័ត៌មានរបស់អ្នក",
+        "setting": "ការកំណត់",
+        "language": {
+            "title": "ជ្រើសរើសភាសា",
+            "english": "អង់គ្លេស",
+            "khmer": "ខ្មែរ"
+        },
+        "changePassword": {
+            "title": "ផ្លាស់ប្តូរពាក្យសម្ងាត់",
+            "old": "លេខសំងាត់​ចាស់",
+            "new": "ពាក្យសម្ងាត់​ថ្មី",
+            "change": "ផ្លាស់ប្តូរ"
+        }
+    },
+    "booking": {
+        "title": "ការកក់",
+        "checkinDate": "ថ្ងៃកត់​ឈ្មោះ​ចូល",
+        "roomNumber": "លេខ​បន្ទប់",
+        "bookingNow": "កក់ឥឡូវនេះ",
+        "logOut": "ចាកចេញ",
+        "notFree": "បន្ទប់នេះមិនទំនេរ",
+        "error": "មិនមានបន្ទប់នៅឡើយទេ :(",
+        "please": "សូមជ្រើសរើសបន្ទប់",
+        "roomTitle": "ប្រភេទ​បន្ទប់"
+    },
+    "myBooking": {
+        "title": "ការកក់របស់ខ្ញុំ",
+        "bookingNumber": "លេខកក់",
+        "roomType": "ប្រភេទ​បន្ទប់",
+        "roomNumber": "លេខ​បន្ទប់",
+        "checkInDate": "ថ្ងៃកត់​ឈ្មោះ​ចូល",
+        "checkOutDate": "ថ្ងៃកត់​ឈ្មោះ​ចេញ",
+        "total": "សរុប",
+        "error": "ការកក់របស់អ្នកគឺទទេ",
+        "continue": "ចុចលើរ៉ូបូតដើម្បីកក់"
     }
 }

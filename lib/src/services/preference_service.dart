@@ -6,6 +6,7 @@ import 'package:skull/src/model/user_model.dart';
 class SharePreferenceService {
   static const String _token = "token_key";
   static const String _user = "user_key";
+  static const String _language = "language_chooser";
   Future<void> saveToken(String token) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString(_token, token);
@@ -31,6 +32,16 @@ class SharePreferenceService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final map = prefs.get(_user);
     return map != null ? Data.fromJson(jsonDecode(map)) : null;
+  }
+
+  Future<void> setLanguage(bool language) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_language, language);
+  }
+
+  Future<bool> getLanguage() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    return prefs.getBool(_language);
   }
 }
 

@@ -7,7 +7,7 @@ void main() {
     EasyLocalization(
       supportedLocales: [Locale('en', 'US'), Locale('km', 'KH')],
       path: 'assets/lang',
-      fallbackLocale: Locale('en', 'US'),
+      fallbackLocale: Locale('km', 'KH'),
       child: App(),
     ),
   );

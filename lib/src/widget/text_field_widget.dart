@@ -25,7 +25,6 @@ class RoundTextField extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 7.0),
       child: Expanded(
         child: Container(
-          height: 40.0,
           child: TextFormField(
             controller: controller,
             onTap: onTap,
@@ -59,7 +58,7 @@ class RoundTextField extends StatelessWidget {
             ),
             validator: (value) {
               if (value.isEmpty) {
-                return 'Please enter some text';
+                return 'txtValidate'.tr();
               }
               return null;
             },

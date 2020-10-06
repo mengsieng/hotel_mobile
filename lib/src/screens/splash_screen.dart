@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skull/src/utils/route_name.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../services/preference_service.dart';
 import '../utils/route_name.dart';
@@ -22,13 +23,25 @@ class _SplashViewState extends State<SplashView> {
       SharePreferenceService preferenceService =
           Provider.of(context, listen: false);
       final token = await preferenceService.getToken();
-      if (token == null) {
-        print(token);
+      final lang = await preferenceService.getLanguage();
+      if (token == null && lang == null) {
+        Navigator.popAndPushNamed(context, ChooseLanguage);
+      } else if (token == null) {
+        checkLanguage(lang);
         Navigator.popAndPushNamed(context, Welcome);
       } else {
+        checkLanguage(lang);
         Navigator.popAndPushNamed(context, Home);
       }
     });
+  }
+
+  checkLanguage(bool lang) {
+    if (lang) {
+      context.locale = Locale('en', 'US');
+    } else {
+      context.locale = Locale('km', 'KH');
+    }
   }
 
   @override

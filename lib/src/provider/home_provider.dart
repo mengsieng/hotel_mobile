@@ -8,9 +8,9 @@ import '../services/preference_service.dart';
 class HomeProvider extends ChangeNotifier {
   final HttpServices http;
   final SharePreferenceService preferenceService;
-
   Data user;
   List<RoomTypeModel> roomModel = [];
+  bool loadingRoom = true;
 
   TextEditingController password = new TextEditingController();
   TextEditingController gender = new TextEditingController();
@@ -23,9 +23,16 @@ class HomeProvider extends ChangeNotifier {
   }
 
   init() async {
+    loadingRoom = true;
     user = await preferenceService.getUser();
     roomModel = await http.getRoomType();
-    print(user.username);
+    loadingRoom = false;
+    notifyListeners();
+  }
+
+  refreshRoomType() async {
+    roomModel.clear();
+    init();
     notifyListeners();
   }
 
